@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.lnt.navigationdrawer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+        <action
+            android:id="@+id/action_nav_home_to_notification"
+            app:destination="@id/notification"
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/nav_gallery"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_home_to_internalStoreage"
+            app:destination="@id/internalStoreage1" />
+        <action
+            android:id="@+id/action_nav_home_to_internalStoreage12"
+            app:destination="@id/internalStoreage1" />
+        <action
+            android:id="@+id/action_nav_home_to_externalStorage"
+            app:destination="@id/externalStorage" />
+        <action
+            android:id="@+id/action_nav_home_to_notification12"
+            app:destination="@id/notification" />
+        <action
+            android:id="@+id/action_nav_home_to_shared"
+            app:destination="@id/shared" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.lnt.navigationdrawer.Notification"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow3"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.lnt.navigationdrawer.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_home2"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.lnt.navigationdrawer.Notification"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notification_to_internalStoreage1"
+            app:destination="@id/internalStoreage1" />
+    </fragment>
+    <fragment
+        android:id="@+id/internalStoreage1"
+        android:name="com.lnt.navigationdrawer.InternalStorage"
+        android:label="fragment_internal_storage"
+        tools:layout="@layout/fragment_internal_storage" >
+        <action
+            android:id="@+id/action_internalStoreage1_to_externalStorage"
+            app:destination="@id/externalStorage" />
+    </fragment>
+    <fragment
+        android:id="@+id/externalStorage"
+        android:name="com.lnt.navigationdrawer.external_storage"
+        android:label="fragment_external_storage"
+        tools:layout="@layout/fragment_external_storage" />
+    <fragment
+        android:id="@+id/shared"
+        android:name="com.lnt.navigationdrawer.shared"
+        android:label="fragment_shared"
+        tools:layout="@layout/fragment_shared" >
+        <action
+            android:id="@+id/action_shared_to_internalStoreage1"
+            app:destination="@id/internalStoreage1" />
+    </fragment>
+</navigation>
